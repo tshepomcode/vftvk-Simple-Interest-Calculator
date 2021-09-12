@@ -29,6 +29,10 @@ h1 {
   margin-right: 10px;
 }
 
+.highlight {
+  background-color: yellow;
+}
+
 .inputs {
   margin: auto 30px;
 }

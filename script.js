@@ -6,13 +6,15 @@ function compute()
     var years = document.getElementById("years").value;
     var interest = principal * years * rate / 100;
     var year = new Date().getFullYear() + parseInt(years);
-    var payment = parseInt(principal) + interest;
-    result = document.getElementById("result");
-    result.innerText = "If you deposit " + principal +",\n"
-                    + "at an interest rate of " + rate + "%.\n"
-                    + "You will receive an amount of "
-                    + payment + ".\n"
-                    + "in the year " + year;
+    var output = "If you deposit <span class='highlight'>" + principal + '</span>,<br>'
+                + "at an interest rate of <span class='highlight'>" + rate + '%</span>.<br>'
+                + "You will receive an amount of <span class='highlight'>" + interest + '</span><br>'
+                + "in the year <span class='highlight'>" + year + '<span>.';
+    var result = document.getElementById("result");
+    
+    var p = document.createElement("p");
+    p.innerHTML = output;
+    result.appendChild(p);
 }
 
 function updateRate() {
