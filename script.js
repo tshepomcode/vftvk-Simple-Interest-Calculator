@@ -1,7 +1,13 @@
 function compute()
 {
-    p = document.getElementById("principal").value;
+    p = document.getElementById("principal");
     var principal = document.getElementById("principal").value;
+    if(parseInt(principal) <= 0 || principal == '') {
+        alert("Enter a positive number");
+        p.focus();
+    }
+
+    // Maybe use a while loop to validate the principal?
     var rate = document.getElementById("rate").value;
     var years = document.getElementById("years").value;
     var interest = principal * years * rate / 100;
@@ -21,4 +27,13 @@ function updateRate() {
     var rateval = document.getElementById("rate").value;
     document.getElementById("rate_val").innerText = rateval;
 }
+
+// function checkValue() {
+//     var input = document.getElementById("principal").value;
+//     var principal = document.getElementById("principal");
+//     if(parseInt(input) <= 0) {
+//         alert("Enter a positive number");
+//         principal.focus();
+//     } 
+// }
         
